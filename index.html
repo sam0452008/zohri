@@ -1,1 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 18th Birthday Zohra ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+    color: white;
+    text-align: center;
+}
+
+/* Main container */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: clamp(40px, 10vw, 85px);
+    margin-bottom: 10px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2 {
+    font-size: clamp(25px, 6vw, 45px);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Heart */
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+/* Buttons */
+
+button {
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: white;
+    color: #ff4f81;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+/* Birthday message */
+
+.message {
+    display: none;
+    max-width: 700px;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+/* 18 Things */
+
+.love-section {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 50px;
+    padding: 25px;
+}
+
+.love-title {
+    font-size: clamp(28px, 6vw, 50px);
+    margin-bottom: 30px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.love-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.love-item {
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 18px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.love-item:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.number {
+    background: white;
+    color: #ff4f81;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+.love-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Photos appearing after balloon pop */
+
+.photo-pop {
+    position: fixed;
+    width: 210px;
+    height: 250px;
+    object-fit: cover;
+    border: 8px solid white;
+    border-bottom: 35px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    z-index: 20;
+    animation: photoPop 3s ease forwards;
+}
+
+@keyframes photoPop {
+
+    0% {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+
+    15% {
+        transform: scale(1) rotate(5deg);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1) rotate(-5deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8) translateY(-100px) rotate(8deg);
+        opacity: 0;
+    }
+
+}
+
+/* Balloons */
+
+.balloon {
+    position: fixed;
+    width: 65px;
+    height: 80px;
+    border-radius: 50%;
+    bottom: -120px;
+    cursor: pointer;
+    animation: floatUp linear forwards;
+    z-index: 3;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 90px;
+    background: white;
+    top: 75px;
+    left: 50%;
+}
+
+@keyframes floatUp {
+
+    from {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    to {
+        transform: translateY(-120vh) rotate(10deg);
+    }
+
+}
+
+/* Pop */
+
+.pop {
+    animation: pop 0.25s forwards !important;
+}
+
+@keyframes pop {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+
+}
+
+/* Confetti */
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 15px;
+    top: -20px;
+    animation: fall linear forwards;
+    z-index: 10;
+}
+
+@keyframes fall {
+
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Mobile */
+
+@media(max-width:600px) {
+
+    .love-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .love-item {
+        padding: 15px;
+    }
+
+    .photo-pop {
+        width: 170px;
+        height: 210px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <div class="heart">❤️</div>
+
+    <h2 id="mainHeading">
+        It's your special day...
+    </h2>
+
+    <h1>ZOHRA 🎂</h1>
+
+    <p class="subtitle">
+        Happy 18th Birthday, Zohriii! 🥹💗
+    </p>
+
+    <p>
+        My favorite <b>Kutti</b> is officially 18! 🎀
+    </p>
+
+
+    <div style="margin-top:25px;">
+
+        <button onclick="showMessage()">
+            💌 Open Your Birthday Letter
+        </button>
+
+        <button onclick="celebrate()">
+            🎉 LET'S CELEBRATE!
+        </button>
+
+        <button onclick="toggleMusic()" id="musicButton">
+            🎵 Play Happy Birthday
+        </button>
+
+    </div>
+
+
+    <!-- Birthday Letter -->
+
+    <div class="message" id="message">
+
+        <h2>Dear Zohriii ❤️</h2>
+
+        <p>
+            Happy 18th Birthday to the most amazing Kutti! 🥹🎂
+        </p>
+
+        <br>
+
+        <p>
+            You're officially 18 now!!! 😭😂
+            I hope this new chapter of your life brings you
+            unlimited happiness, beautiful memories,
+            success and lots of reasons to smile.
+        </p>
+
+        <br>
+
+        <p>
+            Never change the beautiful person you are.
+            Keep smiling, keep annoying everyone,
+            and most importantly... keep being YOU. ❤️
+        </p>
+
+        <br>
+
+        <p>
+            Happy Birthday once again, Zohra! 🎀
+        </p>
+
+        <br>
+
+        <h2>
+            18 looks beautiful on you! ✨
+        </h2>
+
+    </div>
+
+
+    <!-- 18 THINGS -->
+
+    <div class="love-section">
+
+        <h2 class="love-title">
+            💕 18 Things I Love About You 💕
+        </h2>
+
+
+        <div class="love-grid">
+
+
+            <div class="love-item">
+                <div class="number">1</div>
+                <div class="love-text">
+                    Always understands me 🥺
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">2</div>
+                <div class="love-text">
+                    You aree too beautiful
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">3</div>
+                <div class="love-text">
+                    ilysm ❤️
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">4</div>
+                <div class="love-text">
+                    Your hairs 😁
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">5</div>
+                <div class="love-text">
+                    The way u listens 😁
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">6</div>
+                <div class="love-text">
+                    Your dressing sense 👏
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">7</div>
+                <div class="love-text">
+                    Tell things
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">8</div>
+                <div class="love-text">
+                    Explain things
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">9</div>
+                <div class="love-text">
+                    Your fair skin ✨️
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">10</div>
+                <div class="love-text">
+                    Give advises 😙
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">11</div>
+                <div class="love-text">
+                    Merii kutttiiii 😁💕
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">12</div>
+                <div class="love-text">
+                    Our conversations
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">13</div>
+                <div class="love-text">
+                    My BBF 😚
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">14</div>
+                <div class="love-text">
+                    Your confidence
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">15</div>
+                <div class="love-text">
+                    The way u care
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">16</div>
+                <div class="love-text">
+                    The comfort u bring
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">17</div>
+                <div class="love-text">
+                    Your dramatic reactions
+                </div>
+            </div>
+
+
+            <div class="love-item">
+                <div class="number">18</div>
+                <div class="love-text">
+                    Simply u 👀
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        Made with ❤️ especially for Zohra
+    </div>
+
+</div>
+
+
+<script>
+
+/* ===================================
+   PHOTOS
+=================================== */
+
+const photos = [
+    "photo1.jpg",
+    "photo2.jpg",
+    "photo3.jpg",
+    "photo4.jpg"
+];
+
+let photoIndex = 0;
+
+
+/* ===================================
+   BALLOONS
+=================================== */
+
+let popped = 0;
+
+function createBalloon() {
+
+    const balloon = document.createElement("div");
+
+    balloon.classList.add("balloon");
+
+
+    const colors = [
+        "#ff4f81",
+        "#ff6b6b",
+        "#845ec2",
+        "#00c9a7",
+        "#ffc75f",
+        "#4d96ff",
+        "#f9f871"
+    ];
+
+
+    balloon.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
+
+
+    balloon.style.left =
+        Math.random() * 95 + "vw";
+
+
+    balloon.style.animationDuration =
+        (6 + Math.random() * 5) + "s";
+
+
+    balloon.onclick = function() {
+
+        /* Prevent double clicking */
+
+        if (balloon.classList.contains("popped")) {
+            return;
+        }
+
+        balloon.classList.add("popped");
+        balloon.classList.add("pop");
+
+        popped++;
+
+
+        /* Show photo */
+
+        showPhoto();
+
+
+        /* Confetti */
+
+        createConfetti();
+
+
+        setTimeout(() => {
+            balloon.remove();
+        }, 250);
+
+
+        /* 18 balloons */
+
+        if (popped === 18) {
+
+            setTimeout(() => {
+
+                alert(
+                    "🎉 YOU POPPED 18 BALLOONS! 🎉\n\n" +
+                    "Happy 18th Birthday Zohra ❤️"
+                );
+
+                celebrate();
+
+            }, 800);
+
+        }
+
+    };
+
+
+    document.body.appendChild(balloon);
+
+
+    setTimeout(() => {
+
+        if (balloon.parentElement) {
+            balloon.remove();
+        }
+
+    }, 11000);
+
+}
+
+
+/* Continuously create balloons */
+
+setInterval(createBalloon, 800);
+
+
+/* Initial balloons */
+
+for (let i = 0; i < 8; i++) {
+
+    setTimeout(
+        createBalloon,
+        i * 400
+    );
+
+}
+
+
+/* ===================================
+   SHOW PHOTO WHEN BALLOON POPS
+=================================== */
+
+function showPhoto() {
+
+    const photo =
+        document.createElement("img");
+
+    photo.src =
+        photos[photoIndex];
+
+
+    photoIndex++;
+
+    if (photoIndex >= photos.length) {
+        photoIndex = 0;
+    }
+
+
+    photo.classList.add("photo-pop");
+
+
+    photo.style.left =
+        (10 + Math.random() * 65) + "vw";
+
+
+    photo.style.top =
+        (15 + Math.random() * 55) + "vh";
+
+
+    document.body.appendChild(photo);
+
+
+    setTimeout(() => {
+        photo.remove();
+    }, 3000);
+
+}
+
+
+/* ===================================
+   BIRTHDAY LETTER
+=================================== */
+
+function showMessage() {
+
+    const message =
+        document.getElementById("message");
+
+
+    message.style.display = "block";
+
+
+    message.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ===================================
+   CONFETTI
+=================================== */
+
+function createConfetti() {
+
+    for (let i = 0; i < 25; i++) {
+
+        const confetti =
+            document.createElement("div");
+
+
+        confetti.classList.add("confetti");
+
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+
+        confetti.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+
+        confetti.style.background =
+            "hsl(" +
+            Math.random() * 360 +
+            ", 100%, 60%)";
+
+
+        document.body.appendChild(confetti);
+
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, 5000);
+
+    }
+
+}
+
+
+/* ===================================
+   BIG CELEBRATION
+=================================== */
+
+function celebrate() {
+
+    createConfetti();
+
+
+    for (let i = 0; i < 8; i++) {
+
+        setTimeout(() => {
+
+            createConfetti();
+
+        }, i * 300);
+
+    }
+
+
+    document.getElementById("mainHeading").innerHTML =
+        "🎉 HAPPY 18TH BIRTHDAY ZOHRA! 🎉";
+
+
+    /* Start music automatically */
+
+    startMusic();
+
+}
+
+
+/* ===================================
+   HAPPY BIRTHDAY MUSIC
+=================================== */
+
+/*
+   This creates a simple Happy Birthday
+   melody directly in the browser.
+
+   No birthday.mp3 file is needed.
+*/
+
+let audioContext;
+let musicPlaying = false;
+let musicTimer;
+let noteIndex = 0;
+
+
+/* Happy Birthday melody */
+
+const melody = [
+
+    ["G4", 300],
+    ["G4", 300],
+    ["A4", 600],
+    ["G4", 600],
+    ["C5", 600],
+    ["B4", 1000],
+
+    ["G4", 300],
+    ["G4", 300],
+    ["A4", 600],
+    ["G4", 600],
+    ["D5", 600],
+    ["C5", 1000],
+
+    ["G4", 300],
+    ["G4", 300],
+    ["G5", 600],
+    ["E5", 600],
+    ["C5", 600],
+    ["B4", 600],
+    ["A4", 1000],
+
+    ["F5", 300],
+    ["F5", 300],
+    ["E5", 600],
+    ["C5", 600],
+    ["D5", 600],
+    ["C5", 1000]
+
+];
+
+
+const frequencies = {
+
+    "G4": 392.00,
+    "A4": 440.00,
+    "B4": 493.88,
+    "C5": 523.25,
+    "D5": 587.33,
+    "E5": 659.25,
+    "F5": 698.46,
+    "G5": 783.99
+
+};
+
+
+function playNote(note, duration) {
+
+    if (!audioContext) {
+
+        audioContext =
+            new (window.AudioContext ||
+            window.webkitAudioContext)();
+
+    }
+
+
+    const oscillator =
+        audioContext.createOscillator();
+
+
+    const gain =
+        audioContext.createGain();
+
+
+    oscillator.frequency.value =
+        frequencies[note];
+
+
+    oscillator.type = "sine";
+
+
+    gain.gain.setValueAtTime(
+        0.15,
+        audioContext.currentTime
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audioContext.currentTime +
+        duration / 1000
+    );
+
+
+    oscillator.connect(gain);
+
+    gain.connect(audioContext.destination);
+
+
+    oscillator.start();
+
+
+    oscillator.stop(
+        audioContext.currentTime +
+        duration / 1000
+    );
+
+}
+
+
+function playMelody() {
+
+    if (!musicPlaying) {
+        return;
+    }
+
+
+    const note =
+        melody[noteIndex];
+
+
+    playNote(
+        note[0],
+        note[1]
+    );
+
+
+    noteIndex++;
+
+
+    if (noteIndex >= melody.length) {
+        noteIndex = 0;
+    }
+
+
+    musicTimer =
+        setTimeout(
+            playMelody,
+            note[1] + 80
+        );
+
+}
+
+
+function startMusic() {
+
+    if (!musicPlaying) {
+
+        musicPlaying = true;
+
+        noteIndex = 0;
+
+        playMelody();
+
+
+        document.getElementById(
+            "musicButton"
+        ).innerHTML =
+            "⏸️ Pause Music";
+
+    }
+
+}
+
+
+function stopMusic() {
+
+    musicPlaying = false;
+
+
+    clearTimeout(musicTimer);
+
+
+    document.getElementById(
+        "musicButton"
+    ).innerHTML =
+        "🎵 Play Happy Birthday";
+
+}
+
+
+function toggleMusic() {
+
+    if (musicPlaying) {
+
+        stopMusic();
+
+    } else {
+
+        startMusic();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
